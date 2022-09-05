@@ -8,7 +8,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand" href="./index.html">
-        <img src="./assets/img/logo.svg" class="navbar-brand-img
+        <img src="{{asset('assets/img/logo.svg')}}" class="navbar-brand-img
         mx-auto" alt="...">
       </a>
 
@@ -59,6 +59,30 @@
                     <i class="fe fe-grid"></i> Dashboard
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#masterKegiatan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="masterKegiatan">
+                  <i class="fe fe-file"></i> Master Kegiatan
+                </a>
+                <div class="collapse " id="masterKegiatan">
+                  <ul class="nav nav-sm flex-column">
+                    <li class="nav-item">
+                      <a href="{{route('bab_kegiatan')}}" class="nav-link ">
+                        Bab Kegiatan
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./kanban.html" class="nav-link ">
+                        Subbab Kegiatan
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./orders.html" class="nav-link ">
+                        Modul Kegiatan
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
           <li class="nav-item">
             <a class="nav-link" href="#sidebarPages" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
               <i class="fe fe-file"></i> Manajemen DUPAK

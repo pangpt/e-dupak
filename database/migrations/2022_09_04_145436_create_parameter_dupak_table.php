@@ -15,6 +15,17 @@ class CreateParameterDupakTable extends Migration
     {
         Schema::create('parameter_dupak', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('nama_atasan')->nullable();
+            $table->string('nip_atasan')->nullable();
+            $table->string('golongan_atasan')->nullable();
+            $table->date('tmt_atasan')->nullable();
+            $table->string('unit_kerja_atasan')->nullable();
+            $table->string('nama_pejabat')->nullable();
+            $table->string('nip_pejabat')->nullable();
+            $table->string('golongan_pejabat')->nullable();
+            $table->string('lokasi_pejabat')->nullable();
+            $table->string('jabatan_pejabat')->nullable();
             $table->timestamps();
         });
     }

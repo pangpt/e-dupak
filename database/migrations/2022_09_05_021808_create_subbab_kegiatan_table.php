@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateButirKegiatanTable extends Migration
+class CreateSubbabKegiatanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateButirKegiatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('modul_kegiatan', function (Blueprint $table) {
+        Schema::create('subbab_kegiatan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('subbab_kegiatan');
-            $table->string('kode_kegiatan');
-            $table->string('isi_kegiatan');
-            $table->integer('angka_kredit');
-            $table->string('batas_kegiatan');
+            $table->unsignedBigInteger('bab_kegiatan_id');
+            $table->string('kode_subbab');
+            $table->string('nama_subbab');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateButirKegiatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('butir_kegiatan');
+        Schema::dropIfExists('subbab_kegiatan');
     }
 }

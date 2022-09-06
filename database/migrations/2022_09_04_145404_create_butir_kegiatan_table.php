@@ -15,11 +15,11 @@ class CreateButirKegiatanTable extends Migration
     {
         Schema::create('modul_kegiatan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('subbab_kegiatan');
+            $table->unsignedBigInteger('subbab_kegiatan_id');
             $table->string('kode_kegiatan');
             $table->string('isi_kegiatan');
-            $table->integer('angka_kredit');
-            $table->string('batas_kegiatan');
+            $table->integer('angka_kredit')->nullable();
+            $table->string('batas_kegiatan')->nullable();
             $table->timestamps();
         });
     }

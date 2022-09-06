@@ -16,3 +16,5 @@ use App\Http\Controllers\MasterKegiatanController;
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->name('bab_kegiatan');
+Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan');
+Route::get('/master_kegiatan/modul', [MasterKegiatanController::class, 'modul_kegiatan'])->name('modul_kegiatan');

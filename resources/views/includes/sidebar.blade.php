@@ -71,12 +71,12 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="./kanban.html" class="nav-link ">
+                      <a href="{{route('subbab_kegiatan')}}" class="nav-link ">
                         Subbab Kegiatan
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="./orders.html" class="nav-link ">
+                      <a href="{{route('modul_kegiatan')}}" class="nav-link ">
                         Modul Kegiatan
                       </a>
                     </li>

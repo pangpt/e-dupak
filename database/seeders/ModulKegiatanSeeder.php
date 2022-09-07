@@ -71,168 +71,168 @@ class ModulKegiatanSeeder extends Seeder
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.21',
                 'isi_kegiatan' => 'Menyusun arsitektur data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.330',
+                'batas_kegiatan' => '5 (lima) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.23',
                 'isi_kegiatan' => 'Melakukan pengumpulan kebutuhan informasi [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.120',
+                'batas_kegiatan' => '2 (dua) kali per bulan',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.25',
                 'isi_kegiatan' => 'Melakukan perancangan layanan akses data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.26',
                 'isi_kegiatan' => 'Melakukan implementasi rancangan layanan akses data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.29',
                 'isi_kegiatan' => 'Melakukan ingestion data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '1 (satu) kali ingestion data untuk 10 (sepuluh) kegiatan atau sumber data per bulan',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.30',
                 'isi_kegiatan' => 'Melakukan implementasi rancangan integrasi data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.055',
+                'batas_kegiatan' => '2 (dua) kali per bulan',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.31',
                 'isi_kegiatan' => 'Menyusun prosedur pengujian rancangan integrasi data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.055',
+                'batas_kegiatan' => '2 (dua) kali per bulan',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.34',
                 'isi_kegiatan' => 'Melakukan evaluasi hasil pengujian prosedur validasi kebutuhan informasi [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.180',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.35',
                 'isi_kegiatan' => 'Melakukan validasi kebutuhan informasi',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.36',
                 'isi_kegiatan' => 'Menyusun dokumentasi rancangan database [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.080',
+                'batas_kegiatan' => '24 (dua puluh empat) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.37',
                 'isi_kegiatan' => 'Melakukan instalasi dan konfigurasi database management system [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.120',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.39',
                 'isi_kegiatan' => 'Melakukan backup atau pemulihan data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.020',
+                'batas_kegiatan' => '1 (satu) kali per minggu',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.40',
                 'isi_kegiatan' => 'Menyusun tingkat kinerja layanan database [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.055',
+                'batas_kegiatan' => '1 (satu) kali per minggu',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.42',
                 'isi_kegiatan' => 'Melakukan peningkatan kinerja database [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.43',
                 'isi_kegiatan' => 'Menyusun rencana retensi data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.440',
+                'batas_kegiatan' => '1 (satu) kali untuk setiap jenis manajemen data organisasi. Dalam satu tahun, kebutuhan teknologi data yang disusun adalah 5 jenis manajemen data',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.44',
                 'isi_kegiatan' => 'Melakukan evaluasi teknologi data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '2 (dua) kali per tahun',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.45',
                 'isi_kegiatan' => 'Melakukan pengadministrasian teknologi data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '1 (satu) kali per bulan',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.46',
                 'isi_kegiatan' => 'Melakukan deteksi dan perbaikan terhadap permasalahan teknologi data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.030',
+                'batas_kegiatan' => '8 (delapan) kali per bulan',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.51',
                 'isi_kegiatan' => 'Mengelola pengguna dan hak akses data [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.010',
+                'batas_kegiatan' => '1 (satu) kali per minggu',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '2',
                 'kode_kegiatan' => '1.I.C.53',
                 'isi_kegiatan' => 'Menyusun pemetaan data berdasarkan tingkat kerahasiaan informasi [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.110',
+                'batas_kegiatan' => '12 (dua belas) kali per tahun. Hanya pada pusat jaringan.',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[
                 'subbab_kegiatan_id' => '3',
                 'kode_kegiatan' => '1.I.D.7',
                 'isi_kegiatan' => 'Melakukan pengumpulan data audit TI menggunakan metode tertentu [PERTAMA]',
-                'angka_kredit' => '0',
-                'batas_kegiatan' => '',
+                'angka_kredit' => '0.055',
+                'batas_kegiatan' => 'Kegiatan ini dapat dilakukan untuk setiap area TI yang dilakukan audit. 10 obyek untuk 1 area TI',
                 'created_at' => $now,
                 'updated_at' => $now
             ],[

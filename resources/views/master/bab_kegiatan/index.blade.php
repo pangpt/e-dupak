@@ -162,3 +162,6 @@
     </div>
   </div>
 @endsection
+@section('js-after')
+
+@endsection

@@ -37,6 +37,8 @@
     ================================================== -->
     @include('includes.scripts')
 
+    @yield('js-after')
+
 
   </body>
 </html>

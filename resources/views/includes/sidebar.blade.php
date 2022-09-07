@@ -114,7 +114,7 @@
             <div class="collapse " id="sidebarKegiatan">
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                  <a href="./wizard.html" class="nav-link ">
+                  <a href="{{route('dokumentasi.tambah')}}" class="nav-link ">
                     Tambah Kegiatan
                   </a>
                 </li>

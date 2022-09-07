@@ -9,4 +9,9 @@ class ModulKegiatan extends Model
 {
     use HasFactory;
     protected $table = 'modul_kegiatan';
+
+    public function subbab_kegiatan()
+    {
+        return $this->belongsTo(SubbabKegiatan::class);
+    }
 }

@@ -32,16 +32,23 @@
 
           <!-- Project name -->
           <div class="form-group">
-
-            <!-- Label  -->
             <label>
               Nama Kegiatan
             </label>
-
-            <!-- Input -->
+              <select class="custom-select mb-3" data-toggle="select">
+                <option>Pilih butir kegiatan...</option>
+                @foreach($kegiatan as $kegiatanid)
+                <option value="{{$kegiatanid->id}}">{{$kegiatanid->kode_kegiatan}} - {{$kegiatanid->isi_kegiatan}}</option>
+                @endforeach
+              </select>
+          </div>
+          <!-- <div class="form-group">
+            <label>
+              Nama Kegiatan
+            </label>
             <input type="text" id="isi_kegiatan" class="form-control" placeholder="Masukkan kata kunci...">
 
-          </div>
+          </div> -->
 
           <!-- Project name -->
           <div class="form-group">

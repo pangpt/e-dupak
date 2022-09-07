@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MasterKegiatanController;
 use App\Http\Controllers\DokumentasiController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,7 @@ use App\Http\Controllers\DokumentasiController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', [LoginController::class, 'index'])->name('loginpage');
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->name('bab_kegiatan');
 Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan');

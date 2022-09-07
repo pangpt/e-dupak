@@ -22,12 +22,12 @@ class DokumentasiController extends Controller
         $data = $request->all();
         $query = $data['query'];
 
-        $filter_data = ModulKegiatan::select('isi_kegiatan')
+        $filter_data = ModulKegiatan::select('isi_kegiatan', 'kode_kegiatan', 'id')
                         ->where('isi_kegiatan', 'LIKE', '%' .$query. '%')
                         ->get();
         foreach($filter_data as $hsl)
         {
-            $cek[] = $hsl->isi_kegiatan;
+            $cek[] = $hsl->kode_kegiatan.'-'.$hsl->isi_kegiatan;
         }
         // $query = $request->get('query');
         // $filter = ModulKegiatan::where('isi_kegiatan', 'LIKE', '%'. $query .'%')->get();

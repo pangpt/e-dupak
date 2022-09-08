@@ -12,20 +12,36 @@
 
         </div>
         <div class="col-12 col-md-5 col-xl-4 order-md-1 my-5">
-          
-          <!-- Heading -->
           <h1 class="display-4 text-center mb-3">
             Sign in
           </h1>
-          
+
           <!-- Subheading -->
           <p class="text-muted text-center mb-5">
             Free access to our dashboard.
           </p>
-          
-          <!-- Form -->
-          <form>
 
+          @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              @endif
+
+              @if(session()->has('loginError'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{session('loginError')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              @endif
+
+          <!-- Form -->
+          <form action="{{route('login')}}" method="POST">
+            @csrf
             <!-- Email address -->
             <div class="form-group">
 
@@ -33,7 +49,7 @@
               <label>Email</label>
 
               <!-- Input -->
-              <input type="email" class="form-control" placeholder="name@address.com">
+              <input type="email" name="email" class="form-control" placeholder="Masukkan email" required>
 
             </div>
 
@@ -42,17 +58,17 @@
 
               <div class="row">
                 <div class="col">
-                      
+
                   <!-- Label -->
                   <label>Password</label>
 
                 </div>
                 <div class="col-auto">
-                  
+
                   <!-- Help text -->
-                  <a href="password-reset-illustration.html" class="form-text small text-muted">
+                  {{-- <a href="password-reset-illustration.html" class="form-text small text-muted">
                     Forgot password?
-                  </a>
+                  </a> --}}
 
                 </div>
               </div> <!-- / .row -->
@@ -61,7 +77,7 @@
               <div class="input-group input-group-merge">
 
                 <!-- Input -->
-                <input type="password" class="form-control form-control-appended" placeholder="Enter your password">
+                <input type="password" name="password" class="form-control form-control-appended" placeholder="Masukkan password" required>
 
                 <!-- Icon -->
                 <div class="input-group-append">
@@ -74,17 +90,17 @@
             </div>
 
             <!-- Submit -->
-            <button class="btn btn-lg btn-block btn-primary mb-3">
+            <button class="btn btn-lg btn-block btn-primary mb-3" type="submit">
               Sign in
             </button>
 
             <!-- Link -->
             <div class="text-center">
               <small class="text-muted text-center">
-                Don't have an account yet? <a href="sign-up-illustration.html">Sign up</a>.
+                Don't have an account yet? <a href="{{route('registerpage')}}">Sign up</a>.
               </small>
             </div>
-            
+
           </form>
 
         </div>

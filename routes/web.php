@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MasterKegiatanController;
 use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,10 @@ use App\Http\Controllers\LoginController;
 |
 */
 Route::get('/', [LoginController::class, 'index'])->name('loginpage');
+Route::post('/login',[LoginController::class, 'login'])->name('login');
+Route::get('/register', [RegisterController::class, 'index'])->name('registerpage');
+Route::post('/register', [RegisterController::class, 'store'])->name('registerstore');
+
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->name('bab_kegiatan');
 Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan');

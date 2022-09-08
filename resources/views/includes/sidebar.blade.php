@@ -55,28 +55,28 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link " href="./widgets.html">
+                <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="{{route('dashboard')}}">
                     <i class="fe fe-grid"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#masterKegiatan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="masterKegiatan">
+                <a class="nav-link" href="#masterKegiatan" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="masterKegiatan">
                   <i class="fe fe-file"></i> Master Kegiatan
                 </a>
-                <div class="collapse " id="masterKegiatan">
+                <div class="collapse {{ Request::is('master_kegiatan/bab') || Request::is('master_kegiatan/subbab') || Request::is('master_kegiatan/modul') ? 'show' : '' }}" id="masterKegiatan">
                   <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
-                      <a href="{{route('bab_kegiatan')}}" class="nav-link ">
+                      <a href="{{route('bab_kegiatan')}}" class="nav-link {{ Request::is('master_kegiatan/bab') ? 'active' : '' }}">
                         Bab Kegiatan
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{route('subbab_kegiatan')}}" class="nav-link ">
+                      <a href="{{route('subbab_kegiatan')}}" class="nav-link {{ Request::is('master_kegiatan/subbab') ? 'active' : '' }}">
                         Subbab Kegiatan
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{{route('modul_kegiatan')}}" class="nav-link ">
+                      <a href="{{route('modul_kegiatan')}}" class="nav-link {{ Request::is('master_kegiatan/modul') ? 'active' : '' }}">
                         Modul Kegiatan
                       </a>
                     </li>
@@ -108,13 +108,13 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#sidebarKegiatan" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarKegiatan">
+            <a class="nav-link" href="#sidebarKegiatan" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebarKegiatan">
               <i class="fe fe-file"></i> Dokumentasi Kegiatan
             </a>
-            <div class="collapse " id="sidebarKegiatan">
+            <div class="collapse {{ Request::is('dokumentasi/tambah') ? 'show' : '' }}" id="sidebarKegiatan">
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                  <a href="{{route('dokumentasi.tambah')}}" class="nav-link ">
+                  <a href="{{route('dokumentasi.tambah')}}" class="nav-link {{ Request::is('dokumentasi/tambah') ? 'active' : '' }}">
                     Tambah Kegiatan
                   </a>
                 </li>
@@ -154,9 +154,7 @@
 
             <!-- Toggle -->
             <a href="#" id="sidebarIconCopy" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div class="avatar avatar-sm avatar-online">
-                <img src="./assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-              </div>
+                Halo, {{ auth()->user()->name }}
             </a>
 
             <!-- Menu -->
@@ -164,7 +162,10 @@
               <a href="./profile-posts.html" class="dropdown-item">Profile</a>
               <a href="./account-general.html" class="dropdown-item">Settings</a>
               <hr class="dropdown-divider">
-              <a href="./sign-in.html" class="dropdown-item">Logout</a>
+              <form action="{{route('logout')}}" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item">Logout</button>
+              </form>
             </div>
 
           </div>

@@ -16,12 +16,13 @@ use App\Http\Controllers\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [LoginController::class, 'index'])->name('loginpage');
+Route::get('/', [LoginController::class, 'index'])->name('loginpage')->middleware('guest');
 Route::post('/login',[LoginController::class, 'login'])->name('login');
-Route::get('/register', [RegisterController::class, 'index'])->name('registerpage');
+Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
+Route::get('/register', [RegisterController::class, 'index'])->name('registerpage')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->name('registerstore');
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->name('bab_kegiatan');
 Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan');
 Route::get('/master_kegiatan/modul', [MasterKegiatanController::class, 'modul_kegiatan'])->name('modul_kegiatan');

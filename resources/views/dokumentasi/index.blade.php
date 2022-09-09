@@ -14,12 +14,12 @@
 
                 <!-- Pretitle -->
                 <h6 class="header-pretitle">
-                  New project
+                  Dokumentasi Kegiatan
                 </h6>
 
                 <!-- Title -->
                 <h1 class="header-title">
-                  Create a new project
+                  detail
                 </h1>
 
               </div>
@@ -35,12 +35,7 @@
             <label>
               Nama Kegiatan
             </label>
-              <select class="custom-select mb-3" data-toggle="select" name="butir_kegiatan">
-                <option>Pilih butir kegiatan...</option>
-                @foreach($kegiatan as $kegiatanid)
-                <option value="{{$kegiatanid->id}}">{{$kegiatanid->kode_kegiatan}} - {{$kegiatanid->isi_kegiatan}}</option>
-                @endforeach
-              </select>
+              {{$bukti->id}}
           </div>
           <!-- <div class="form-group">
             <label>

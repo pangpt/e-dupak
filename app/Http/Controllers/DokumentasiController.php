@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ModulKegiatan;
+use App\Models\Dupak;
+use Auth;
 
 class DokumentasiController extends Controller
 {
@@ -14,6 +16,35 @@ class DokumentasiController extends Controller
 
         return view('dokumentasi.tambah', [
             'kegiatan' => $kegiatan,
+        ]);
+    }
+
+    public function inputkegiatan(Request $request)
+    {
+        $ak = ModulKegiatan::where('id', $request->butir_kegiatan)->first();
+        // dd($ak);
+
+        $data = new Dupak;
+        $data->user_id = Auth::user()->id;
+        $data->butir_kegiatan_id = $request->butir_kegiatan;
+        $data->volume = $request->volume;
+        $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
+        $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
+        $data->save();
+
+        // dd($data);
+
+        return redirect()->route('dokumentasi.detil')->with('bukti', $data);
+    }
+
+    public function detil(Request $request)
+    {
+        // $data = Dupak::where('id', $id)->first();
+        // dd($data);
+        $bukti = $request->session()->get('bukti');
+
+        return view('dokumentasi.index',[
+            'bukti' => $bukti,
         ]);
     }
 

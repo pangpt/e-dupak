@@ -127,9 +127,23 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./widgets.html">
-              <i class="fe fe-user"></i> Profil
+            <a class="nav-link" href="#sidebarAkun" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebarAkun">
+              <i class="fe fe-file"></i> Manajemen Akun
             </a>
+            <div class="collapse {{ Request::is('profile') || Request::is('profile/akun') ? 'show' : '' }}" id="sidebarAkun">
+              <ul class="nav nav-sm flex-column">
+                <li class="nav-item">
+                  <a href="{{route('profile.index')}}" class="nav-link {{ Request::is('profile') ? 'active' : '' }}">
+                    Profil Biodata
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{route('profile.akun')}}" class="nav-link {{ Request::is('profile/akun') ? 'active' : '' }}">
+                    Ubah Profil
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li class="nav-item d-md-none">

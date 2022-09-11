@@ -6,6 +6,7 @@ use App\Http\Controllers\MasterKegiatanController;
 use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,5 +31,9 @@ Route::get('/master_kegiatan/modul', [MasterKegiatanController::class, 'modul_ke
 Route::get('/dokumentasi/tambah', [DokumentasiController::class, 'tambah'])->name('dokumentasi.tambah');
 Route::get('/dokumentasi/detil', [DokumentasiController::class, 'detil'])->name('dokumentasi.detil');
 Route::post('/dokumentasi/tambah', [DokumentasiController::class, 'inputkegiatan'])->name('dokumentasi.input');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::get('/profile/akun', [ProfileController::class, 'akun'])->name('profile.akun');
+Route::post('/profile/akun', [ProfileController::class, 'update'])->name('profile.update');
 
 Route::get('/dokumentasi/autocomplete', [DokumentasiController::class, 'autocomplete'])->name('dokumentasi.autocomplete');

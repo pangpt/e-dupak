@@ -26,7 +26,7 @@ class DokumentasiController extends Controller
 
         $data = new Dupak;
         $data->user_id = Auth::user()->id;
-        $data->butir_kegiatan_id = $request->butir_kegiatan;
+        $data->modul_kegiatan_id = $request->butir_kegiatan;
         $data->volume = $request->volume;
         $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
         $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;

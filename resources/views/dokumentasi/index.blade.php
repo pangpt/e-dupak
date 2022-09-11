@@ -33,9 +33,9 @@
           <!-- Project name -->
           <div class="form-group">
             <label>
-              Nama Kegiatan
+              Nama Kegiatan :
             </label>
-              {{$bukti->id}}
+              {{$bukti->modul_kegiatan->isi_kegiatan}}
           </div>
           <!-- <div class="form-group">
             <label>
@@ -50,11 +50,9 @@
 
             <!-- Label  -->
             <label>
-              Volume Kegiatan
+              Volume Kegiatan :
             </label>
-
-            <!-- Input -->
-            <input type="text" class="form-control" placeholder="Volume Kegiatan" name="volume">
+            {{$bukti->volume}}
 
           </div>
 
@@ -63,13 +61,72 @@
 
             <!-- Label  -->
             <label>
-              Tanggal Pelaksanaan
+              Tanggal Pelaksanaan :
             </label>
 
-            <!-- Input -->
-            <input type="text" class="form-control" data-toggle="flatpickr" placeholder="Tanggal pelaksanaan kegiatan" name="tanggal_pelaksanaan">
+            {{$bukti->tanggal_pelaksanaan}}
 
           </div>
+        
+        <div class="form-group">
+
+            <!-- Label  -->
+            <label>
+              Bukti :
+            </label>
+
+            <div class="dropzone dropzone-multiple" data-toggle="dropzone" data-options='{"url": "https://"}'>
+              <!-- Fallback -->
+              <div class="fallback">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFileUploadMultiple" multiple>
+                    <label class="custom-file-label" for="customFileUploadMultiple">Choose file</label>
+                  </div>
+                </div>
+    
+                <!-- Preview -->
+                <ul class="dz-preview dz-preview-multiple list-group list-group-lg list-group-flush">
+                  <li class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+    
+                        <!-- Image -->
+                        <div class="avatar">
+                          <img class="avatar-img rounded" src="data:image/svg+xml,%3csvg3c/svg%3e" alt="..." data-dz-thumbnail>
+                        </div>
+    
+                      </div>
+                      <div class="col ml-n3">
+    
+                        <!-- Heading -->
+                        <h4 class="mb-1" data-dz-name>...</h4>
+    
+                        <!-- Text -->
+                        <small class="text-muted" data-dz-size>...</small>
+    
+                      </div>
+                      <div class="col-auto">
+    
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+                          <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-more-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <a href="#" class="dropdown-item" data-dz-remove>
+                              Remove
+                            </a>
+                          </div>
+                        </div>
+    
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+    
+            </div>
+        </div>
+
 
           <!-- Divider -->
           <hr class="mt-5 mb-5">

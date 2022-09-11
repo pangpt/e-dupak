@@ -10,8 +10,8 @@ class Dupak extends Model
     // use HasFactory;
     protected $table = 'dupak';
 
-    // public function subbab_kegiatan()
-    // {
-    //     return $this->belongsTo(SubbabKegiatan::class);
-    // }
+    public function modul_kegiatan()
+    {
+        return $this->belongsTo(ModulKegiatan::class);
+    }
 }

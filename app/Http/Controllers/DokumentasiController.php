@@ -48,6 +48,14 @@ class DokumentasiController extends Controller
         ]);
     }
 
+    public function daftarkegiatan()
+    {
+        $data = Dupak::where('user_id', Auth::user()->id)->get();
+        return view('dokumentasi.daftarkegiatan',[
+            'data' => $data
+        ]);
+    }
+
     public function autocomplete(Request $request)
     {
         $data = $request->all();

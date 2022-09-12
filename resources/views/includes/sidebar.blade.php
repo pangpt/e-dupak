@@ -90,7 +90,7 @@
             <div class="collapse " id="sidebarPages">
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                  <a href="./wizard.html" class="nav-link ">
+                  <a href="{{route('dupak.parameter')}}" class="nav-link ">
                     Parameter
                   </a>
                 </li>
@@ -119,7 +119,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./kanban.html" class="nav-link ">
+                  <a href="{{route('dokumentasi.daftarkegiatan')}}" class="nav-link ">
                     Daftar Kegiatan
                   </a>
                 </li>

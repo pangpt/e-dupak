@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ModulKegiatan;
 use App\Models\Dupak;
 use Auth;
+use Yajra\DataTables\DataTables;
 
 class DokumentasiController extends Controller
 {
@@ -21,6 +22,7 @@ class DokumentasiController extends Controller
 
     public function inputkegiatan(Request $request)
     {
+
         $ak = ModulKegiatan::where('id', $request->butir_kegiatan)->first();
         // dd($ak);
 
@@ -45,6 +47,14 @@ class DokumentasiController extends Controller
 
         return view('dokumentasi.index',[
             'bukti' => $bukti,
+        ]);
+    }
+
+    public function daftarkegiatan()
+    {
+        $data = Dupak::limit(100)->where('user_id', Auth::user()->id)->get();
+        return view('dokumentasi.daftarkegiatan',[
+            'data' => $data
         ]);
     }
 

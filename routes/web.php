@@ -7,6 +7,7 @@ use App\Http\Controllers\DokumentasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DupakController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,7 @@ Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->na
 Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan');
 Route::get('/master_kegiatan/modul', [MasterKegiatanController::class, 'modul_kegiatan'])->name('modul_kegiatan');
 
+Route::get('dokumentasi/daftarkegiatan', [DokumentasiController::class, 'daftarkegiatan'])->name('dokumentasi.daftarkegiatan');
 Route::get('/dokumentasi/tambah', [DokumentasiController::class, 'tambah'])->name('dokumentasi.tambah');
 Route::get('/dokumentasi/detil', [DokumentasiController::class, 'detil'])->name('dokumentasi.detil');
 Route::post('/dokumentasi/tambah', [DokumentasiController::class, 'inputkegiatan'])->name('dokumentasi.input');
@@ -35,5 +37,8 @@ Route::post('/dokumentasi/tambah', [DokumentasiController::class, 'inputkegiatan
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::get('/profile/akun', [ProfileController::class, 'akun'])->name('profile.akun');
 Route::post('/profile/akun', [ProfileController::class, 'update'])->name('profile.update');
+
+Route::get('/dupak/parameter', [DupakController::class, 'parameter'])->name('dupak.parameter');
+Route::post('/dupak/parameter', [DupakController::class, 'inputParameter'])->name('dupak.inputparam');
 
 Route::get('/dokumentasi/autocomplete', [DokumentasiController::class, 'autocomplete'])->name('dokumentasi.autocomplete');

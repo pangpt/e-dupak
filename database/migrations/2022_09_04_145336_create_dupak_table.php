@@ -16,7 +16,7 @@ class CreateDupakTable extends Migration
         Schema::create('dupak', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('butir_kegiatan_id');
+            $table->unsignedBigInteger('modul_kegiatan_id');
             $table->integer('volume');
             $table->decimal('angka_kredit_usulan',4,3);
             $table->date('tanggal_pelaksanaan');

@@ -36,8 +36,8 @@
               <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
 
                 <!-- Button -->
-                <a href="#!" class="btn btn-primary d-block d-md-inline-block lift">
-                  Subscribe
+                <a href="{{route('profile.akun')}}" class="btn btn-primary d-block d-md-inline-block lift">
+                  Pengaturan
                 </a>
 
               </div>

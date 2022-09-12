@@ -76,6 +76,16 @@
 
           </div>
 
+          <div class="form-group">
+
+            <!-- Label  -->
+            <label>
+              Bukti Fisik : (bisa diupload nanti)
+            </label>
+
+            <input class="form-control" type="file" id="formFile" name="evidence">
+        </div>
+
           <!-- Divider -->
           <hr class="mt-5 mb-5">
 

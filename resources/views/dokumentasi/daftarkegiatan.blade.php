@@ -1,5 +1,11 @@
 @extends('layouts.master')
 
+
+@section('style-before')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -36,96 +42,80 @@
 
         <!-- Card -->
         <div class="card" data-list='{"valueNames": ["orders-order", "orders-product", "orders-date", "orders-total", "orders-status", "orders-method"]}'>
-          <div class="table-responsive">
-            <table class="table table-sm table-nowrap card-table" id="example">
-              <thead>
-                <tr>
-                  <th>
-                    <a href="#" class="text-muted list-sort" data-sort="orders-order">
-                      Nama Kegiatan
-                    </a>
-                  </th>
-                  <th>
-                    <a href="#" class="text-muted list-sort" data-sort="orders-product">
-                      Tanggal Pelaksanaan
-                    </a>
-                  </th>
-                  <th>
-                    <a href="#" class="text-muted list-sort" data-sort="orders-date">
-                      Volume
-                    </a>
-                  </th>
-                  <th>
-                    <a href="#" class="text-muted list-sort" data-sort="orders-date">
-                      Angka Kredit
-                    </a>
-                  </th>
-                  <th>
-                    <a href="#" class="text-muted list-sort" data-sort="orders-date">
-                      Bukti Fisik
-                    </a>
-                  </th>
-                  <th>
-                    <a href="#" class="text-muted list-sort" data-sort="orders-date">
-                      Aksi
-                    </a>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="list">
-                @foreach($data as $key)
-                <tr>
-                  <td class="orders-order">
-                    {{$key->modul_kegiatan->isi_kegiatan}}
-                  </td>
-                  <td class="orders-product">
-                    {{$key->tanggal_pelaksanaan}}
-                  </td>
-                  <td class="orders-date">
-
-                    {{$key->volume}}
-
-                  </td>
-                  <td class="orders-date">
-
-                    {{$key->angka_kredit_usulan}}
-
-                  </td>
-                  <td class="orders-date">
-
-                    {{$key->evidence}}
-
-                  </td>
-                  <td class="orders-date">
-
-                    {{$key->volume}}
-
-                  </td>
-                  <td class="text-right">
-
-                    <!-- Dropdown -->
-                    <div class="dropdown">
-                      <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fe fe-more-vertical"></i>
+          <div class="card-header">
+            Data Daftar Kegiatan
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-xl table-striped table-hover table-bordered" id="datatables">
+                <thead>
+                  <tr>
+                    <th>
+                      <a href="#" class="text-muted list-sort" data-sort="orders-order">
+                        Nama Kegiatan
                       </a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#!" class="dropdown-item">
-                          Action
-                        </a>
-                        <a href="#!" class="dropdown-item">
-                          Another action
-                        </a>
-                        <a href="#!" class="dropdown-item">
-                          Something else here
-                        </a>
-                      </div>
-                    </div>
-
-                  </td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
+                    </th>
+                    <th>
+                      <a href="#" class="text-muted list-sort" data-sort="orders-product">
+                        Tanggal Pelaksanaan
+                      </a>
+                    </th>
+                    <th>
+                      <a href="#" class="text-muted list-sort" data-sort="orders-date">
+                        Volume
+                      </a>
+                    </th>
+                    <th>
+                      <a href="#" class="text-muted list-sort" data-sort="orders-date">
+                        Angka Kredit
+                      </a>
+                    </th>
+                    <th>
+                      <a href="#" class="text-muted list-sort" data-sort="orders-date">
+                        Bukti Fisik
+                      </a>
+                    </th>
+                    <th>
+                      <a href="#" class="text-muted list-sort" data-sort="orders-date">
+                        Aksi
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                  @foreach($data as $key)
+                  <tr>
+                    <td class="orders-order">
+                      {{$key->modul_kegiatan->isi_kegiatan}}
+                    </td>
+                    <td class="orders-product">
+                      {{$key->tanggal_pelaksanaan}}
+                    </td>
+                    <td class="orders-date">
+  
+                      {{$key->volume}}
+  
+                    </td>
+                    <td class="orders-date">
+  
+                      {{$key->angka_kredit_usulan}}
+  
+                    </td>
+                    <td class="orders-date">
+  
+                      {{$key->evidence}}
+  
+                    </td>
+                    <td class="orders-date">
+  
+                      {{$key->volume}}
+  
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -193,7 +183,13 @@
   </div>
 @endsection
 @section('js-after')
-<script type="text/javascript">
+<script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+<script src='https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js'></script>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#datatables').DataTable();
+  })
 </script>
 @endsection

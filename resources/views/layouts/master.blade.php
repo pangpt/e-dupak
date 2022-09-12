@@ -7,6 +7,8 @@
 
     @include('includes.styles')
 
+    @yield('style-before')
+
     <!-- Title -->
     <title>Dashkit</title>
 

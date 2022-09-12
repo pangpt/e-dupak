@@ -17,6 +17,7 @@ class CreateUserDetailsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->date('tmt')->nullable();
+            $table->string('jabatan')->nullable();
             $table->string('instansi')->nullable();
             $table->string('satker')->nullable();
             $table->string('golongan')->nullable();

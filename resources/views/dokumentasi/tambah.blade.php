@@ -28,7 +28,7 @@
         </div>
 
         <!-- Form -->
-        <form class="mb-4" action="{{route('dokumentasi.input')}}" method="POST">
+        <form class="mb-4" action="{{route('dokumentasi.input')}}" method="POST" enctype="multipart/form-data">
             @csrf
           <!-- Project name -->
           <div class="form-group">
@@ -83,7 +83,7 @@
               Bukti Fisik : (bisa diupload nanti)
             </label>
 
-            <input class="form-control" type="file" id="formFile" name="evidence">
+            <input class="form-control" type="file" id="evidence" name="evidence">
         </div>
 
           <!-- Divider -->

@@ -92,24 +92,31 @@
                       {{$key->tanggal_pelaksanaan}}
                     </td>
                     <td class="orders-date">
-  
+
                       {{$key->volume}}
-  
+
                     </td>
                     <td class="orders-date">
-  
+
                       {{$key->angka_kredit_usulan}}
-  
+
                     </td>
                     <td class="orders-date">
-  
-                      {{$key->evidence}}
-  
+
+                      <a href="{{asset('storage/'.$key->evidence)}}" target="_blank" class="text-decoration-none"><span class="fe fe-file" title="Lihat Berkas"></span></a>
+
                     </td>
                     <td class="orders-date">
-  
-                      {{$key->volume}}
-  
+
+                        <a href="#" target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="fe fe-eye"></i>
+                        </a>
+                        <a href="#" target="_blank" class="btn btn-outline-success btn-sm">
+                            <i class="fe fe-edit"></i>
+                        </a>
+                        <a href="#" target="_blank" class="btn btn-outline-danger btn-sm">
+                            <i class="fe fe-trash"></i>
+                        </a>
                     </td>
                   </tr>
                   @endforeach

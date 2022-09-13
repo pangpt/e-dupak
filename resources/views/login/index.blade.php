@@ -7,7 +7,7 @@
 
           <!-- Image -->
           <div class="text-center">
-            <img src="assets/img/illustrations/happiness.svg" alt="..." class="img-fluid">
+            <img src="assets/img/illustrations/dupak.jpg" alt="..." class="img-fluid">
           </div>
 
         </div>

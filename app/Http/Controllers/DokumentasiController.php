@@ -23,8 +23,17 @@ class DokumentasiController extends Controller
     public function inputkegiatan(Request $request)
     {
 
+        $request->validate([
+            'evidence' => 'file|max:1024|mimes:pdf,txt'
+        ]);
+
         $ak = ModulKegiatan::where('id', $request->butir_kegiatan)->first();
         // dd($ak);
+
+        $file = $request->file('evidence');
+        // $filename = $file->getClientOriginalName();
+
+        // dd($filename);
 
         $data = new Dupak;
         $data->user_id = Auth::user()->id;
@@ -32,7 +41,9 @@ class DokumentasiController extends Controller
         $data->volume = $request->volume;
         $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
         $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
+        $data->evidence = $file ? $file->store('public/file_evidence') : null;
         $data->save();
+        // dd($data);
 
         // dd($data);
 

@@ -18,7 +18,7 @@ class CreateButirKegiatanTable extends Migration
             $table->unsignedBigInteger('subbab_kegiatan_id');
             $table->string('kode_kegiatan');
             $table->string('isi_kegiatan');
-            $table->decimal('angka_kredit',4,3)->nullable();
+            $table->decimal('angka_kredit',6,4)->nullable();
             $table->string('batas_kegiatan')->nullable();
             $table->timestamps();
         });

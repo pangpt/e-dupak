@@ -18,7 +18,7 @@ class CreateDupakTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('modul_kegiatan_id');
             $table->integer('volume');
-            $table->decimal('angka_kredit_usulan',4,3);
+            $table->decimal('angka_kredit_usulan',6,4);
             $table->date('tanggal_pelaksanaan');
             $table->string('evidence')->nullable();
             $table->timestamps();

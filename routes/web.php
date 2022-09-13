@@ -33,6 +33,8 @@ Route::get('dokumentasi/daftarkegiatan', [DokumentasiController::class, 'daftark
 Route::get('/dokumentasi/tambah', [DokumentasiController::class, 'tambah'])->name('dokumentasi.tambah');
 Route::get('/dokumentasi/detil', [DokumentasiController::class, 'detil'])->name('dokumentasi.detil');
 Route::post('/dokumentasi/tambah', [DokumentasiController::class, 'inputkegiatan'])->name('dokumentasi.input');
+Route::post('dokumentasi/edit/{id}',[DokumentasiController::class, 'edit'])->name('dokumentasi.edit');
+Route::get('/dokumentasi/hapus/{id}', [DokumentasiController::class, 'hapus'])->name('dokumentasi.hapus');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::get('/profile/akun', [ProfileController::class, 'akun'])->name('profile.akun');

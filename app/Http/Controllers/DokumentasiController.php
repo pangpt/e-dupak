@@ -7,6 +7,7 @@ use App\Models\ModulKegiatan;
 use App\Models\Dupak;
 use Auth;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\File;
 
 class DokumentasiController extends Controller
 {
@@ -63,10 +64,38 @@ class DokumentasiController extends Controller
 
     public function daftarkegiatan()
     {
-        $data = Dupak::limit(100)->where('user_id', Auth::user()->id)->get();
+        $data = Dupak::limit(100)->where('user_id', Auth::user()->id)->orderBy('id', 'ASC')->get();
         return view('dokumentasi.daftarkegiatan',[
             'data' => $data
         ]);
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $ak = ModulKegiatan::where('id', $request->butir_kegiatan)->first();
+
+        // dd($request->butir_kegiatan);
+
+        $data = Dupak::where('id', $id)->first();
+        $data->modul_kegiatan_id = $request->butir_kegiatan;
+        $data->volume = $request->volume;
+        $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
+        $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
+        if($request->file('evidence')){
+            $data->evidence = $request->file('evidence')->store('public/file_evidence');
+        }
+        $data->update();
+        // dd($data);
+
+        return redirect()->back();
+    }
+
+    public function hapus($id)
+    {
+        $data = Dupak::findOrFail($id);
+        $data->delete();
+
+        return redirect()->back();
     }
 
     public function autocomplete(Request $request)

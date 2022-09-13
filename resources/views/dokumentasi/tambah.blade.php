@@ -42,18 +42,9 @@
                 @endforeach
               </select>
           </div>
-          <!-- <div class="form-group">
-            <label>
-              Nama Kegiatan
-            </label>
-            <input type="text" id="isi_kegiatan" class="form-control" placeholder="Masukkan kata kunci...">
 
-          </div> -->
-
-          <!-- Project name -->
           <div class="form-group">
 
-            <!-- Label  -->
             <label>
               Volume Kegiatan
             </label>
@@ -63,10 +54,7 @@
 
           </div>
 
-          <!-- Project name -->
           <div class="form-group">
-
-            <!-- Label  -->
             <label>
               Tanggal Pelaksanaan
             </label>
@@ -77,14 +65,12 @@
           </div>
 
           <div class="form-group">
-
-            <!-- Label  -->
             <label>
               Bukti Fisik : (bisa diupload nanti)
             </label>
 
             <input class="form-control" type="file" id="evidence" name="evidence">
-        </div>
+         </div>
 
           <!-- Divider -->
           <hr class="mt-5 mb-5">

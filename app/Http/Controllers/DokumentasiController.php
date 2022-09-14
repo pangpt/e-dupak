@@ -24,11 +24,20 @@ class DokumentasiController extends Controller
     public function inputkegiatan(Request $request)
     {
 
-        $request->validate([
+        $rules = [
+            'modul_kegiatan_id' => 'unique:dupak',
             'evidence' => 'file|max:1024|mimes:pdf,txt'
-        ]);
+        ];
 
-        $ak = ModulKegiatan::where('id', $request->butir_kegiatan)->first();
+        $messages = [
+            'unique' => 'Butir kegiatan sudah ada',
+            'mimes' => 'Format file harus .pdf atau .txt',
+            'max' => 'Maksimal ukuran file adalah 1mb'
+        ];
+
+        $this->validate($request,$rules,$messages);
+
+        $ak = ModulKegiatan::where('id', $request->modul_kegiatan_id)->first();
         // dd($ak);
 
         $file = $request->file('evidence');
@@ -38,7 +47,7 @@ class DokumentasiController extends Controller
 
         $data = new Dupak;
         $data->user_id = Auth::user()->id;
-        $data->modul_kegiatan_id = $request->butir_kegiatan;
+        $data->modul_kegiatan_id = $request->modul_kegiatan_id;
         $data->volume = $request->volume;
         $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
         $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
@@ -48,7 +57,7 @@ class DokumentasiController extends Controller
 
         // dd($data);
 
-        return redirect()->route('dokumentasi.detil')->with('bukti', $data);
+        return redirect()->back()->with('success', 'Butir kegiatan berhasil ditambahkan');
     }
 
     public function detil(Request $request)

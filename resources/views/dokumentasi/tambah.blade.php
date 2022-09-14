@@ -26,6 +26,14 @@
             </div> <!-- / .row -->
           </div>
         </div>
+         @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              @endif
 
         <!-- Form -->
         <form class="mb-4" action="{{route('dokumentasi.input')}}" method="POST" enctype="multipart/form-data">
@@ -35,12 +43,17 @@
             <label>
               Nama Kegiatan
             </label>
-              <select class="custom-select mb-3" data-toggle="select" name="butir_kegiatan">
+              <select class="custom-select mb-3 @error('modul_kegiatan_id') is-invalid @enderror" data-toggle="select" name="modul_kegiatan_id">
                 <option>Pilih butir kegiatan...</option>
                 @foreach($kegiatan as $kegiatanid)
                 <option value="{{$kegiatanid->id}}">{{$kegiatanid->kode_kegiatan}} - {{$kegiatanid->isi_kegiatan}}</option>
                 @endforeach
               </select>
+              @error('modul_kegiatan_id')
+              <div class="invalid-feedback">
+                {{$message}}
+              </div>
+              @enderror
           </div>
 
           <div class="form-group">
@@ -50,7 +63,7 @@
             </label>
 
             <!-- Input -->
-            <input type="text" class="form-control" placeholder="Volume Kegiatan" name="volume">
+            <input type="text" class="form-control" placeholder="Volume Kegiatan" name="volume" value="{{old('volume')}}">
 
           </div>
 
@@ -60,7 +73,7 @@
             </label>
 
             <!-- Input -->
-            <input type="text" class="form-control" data-toggle="flatpickr" placeholder="Tanggal pelaksanaan kegiatan" name="tanggal_pelaksanaan">
+            <input type="text" class="form-control" data-toggle="flatpickr" placeholder="Tanggal pelaksanaan kegiatan" name="tanggal_pelaksanaan" value="{{old('tanggal_pelaksanaan')}}">
 
           </div>
 
@@ -69,7 +82,12 @@
               Bukti Fisik : (bisa diupload nanti)
             </label>
 
-            <input class="form-control" type="file" id="evidence" name="evidence">
+            <input class="form-control @error('evidence') is-invalid @enderror" type="file" id="evidence" name="evidence">
+            @error('evidence')
+              <div class="invalid-feedback">
+                {{$message}}
+              </div>
+              @enderror
          </div>
 
           <!-- Divider -->

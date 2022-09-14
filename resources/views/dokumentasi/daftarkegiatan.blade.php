@@ -98,7 +98,11 @@
                     {{$key->angka_kredit_usulan}}
                   </td>
                   <td class="orders-date">
-                    <a href="{{asset('storage/'.$key->evidence)}}" target="_blank" class="text-decoration-none"><span class="fe fe-file" title="Lihat Berkas"></span></a>
+                    @if($key->evidence != null)
+                      <a href="{{asset('storage/'.$key->evidence)}}" target="_blank" class="text-decoration-none"><span class="fe fe-file" title="Lihat Berkas"></span></a>
+                    @else 
+                    @endif
+                    
                   </td>
                   <td class="orders-date">
                       <a href="#" class="btn btn-outline-primary btn-sm">

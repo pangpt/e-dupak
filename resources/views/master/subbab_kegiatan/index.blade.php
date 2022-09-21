@@ -22,14 +22,14 @@
                 </h1>
 
               </div>
-              <div class="col-auto">
+              {{-- <div class="col-auto">
 
                 <!-- Button -->
                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalMembers">
                     Tambah
                 </button>
 
-              </div>
+              </div> --}}
             </div> <!-- / .row -->
           </div>
         </div>

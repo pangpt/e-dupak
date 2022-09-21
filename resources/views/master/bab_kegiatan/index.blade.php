@@ -25,9 +25,9 @@
               <div class="col-auto">
 
                 <!-- Button -->
-                <button class="btn btn-primary" data-toggle="modal" data-target="#modalMembers">
+                {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#modalMembers">
                     Tambah
-                </button>
+                </button> --}}
 
               </div>
             </div> <!-- / .row -->

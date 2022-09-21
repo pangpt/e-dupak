@@ -21,14 +21,14 @@
                 </h1>
 
               </div>
-              <div class="col-auto">
+              {{-- <div class="col-auto">
 
                 <!-- Button -->
                 <a href="#!" class="btn btn-primary lift">
                   Create Report
                 </a>
 
-              </div>
+              </div> --}}
             </div> <!-- / .row -->
           </div> <!-- / .header-body -->
 

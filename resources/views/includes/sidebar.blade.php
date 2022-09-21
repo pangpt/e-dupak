@@ -84,34 +84,34 @@
                 </div>
               </li>
           <li class="nav-item">
-            <a class="nav-link" href="#sidebarPages" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
+            <a class="nav-link" href="#manajemenDupak" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="manajemenDupak">
               <i class="fe fe-file"></i> Manajemen DUPAK
             </a>
-            <div class="collapse " id="sidebarPages">
+            <div class="collapse {{ Request::is('dupak/parameter') || Request::is('dupak/dupak') || Request::is('dupak/cekstatus') ? 'show' : '' }}" id="manajemenDupak">
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                  <a href="{{route('dupak.parameter')}}" class="nav-link ">
+                  <a href="{{route('dupak.parameter')}}" class="nav-link {{ Request::is('dupak/parameter') ? 'active' : '' }}">
                     Parameter
                   </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item {{ Request::is('dupak/dupak') ? 'active' : '' }}">
                   <a href="./kanban.html" class="nav-link ">
                     DUPAK
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is('dupak/cekstatus') ? 'active' : '' }}">
                   <a href="./orders.html" class="nav-link ">
                     Cek Status
                   </a>
-                </li>
+                </li> --}}
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#sidebarKegiatan" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebarKegiatan">
+            <a class="nav-link" href="#dokumenKegiatan" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="dokumenKegiatan">
               <i class="fe fe-file"></i> Dokumentasi Kegiatan
             </a>
-            <div class="collapse {{ Request::is('dokumentasi/tambah') ? 'show' : '' }}" id="sidebarKegiatan">
+            <div class="collapse {{ Request::is('dokumentasi/tambah') || Request::is('dokumentasi/daftarkegiatan') ? 'show' : '' }}" id="dokumenKegiatan">
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
                   <a href="{{route('dokumentasi.tambah')}}" class="nav-link {{ Request::is('dokumentasi/tambah') ? 'active' : '' }}">
@@ -119,7 +119,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{route('dokumentasi.daftarkegiatan')}}" class="nav-link ">
+                  <a href="{{route('dokumentasi.daftarkegiatan')}}" class="nav-link {{ Request::is('dokumentasi/daftarkegiatan') ? 'active' : '' }}">
                     Daftar Kegiatan
                   </a>
                 </li>
@@ -173,8 +173,7 @@
 
             <!-- Menu -->
             <div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
-              <a href="./profile-posts.html" class="dropdown-item">Profile</a>
-              <a href="./account-general.html" class="dropdown-item">Settings</a>
+              <a href="{{route('profile.index')}}" class="dropdown-item">Profile</a>
               <hr class="dropdown-divider">
               <form action="{{route('logout')}}" method="post">
                 @csrf

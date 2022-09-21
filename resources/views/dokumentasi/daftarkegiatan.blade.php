@@ -105,10 +105,10 @@
                     
                   </td>
                   <td class="orders-date">
-                      <a href="#" class="btn btn-outline-primary btn-sm">
+                      {{-- <a href="#" class="btn btn-outline-primary btn-sm">
                           <i class="fe fe-eye"></i>
-                      </a>
-                      <a href="#" class="btn btn-outline-success btn-sm btn-edit" data-toggle="modal" data-target="#editButir" data-id="{{$key->id}}" data-isi="{{$key->modul_kegiatan->isi_kegiatan}}" data-modul="{{$key->modul_kegiatan->id}}" data-tgl="{{$key->tanggal_pelaksanaan}}" data-vol="{{$key->volume}}" data-kredit="{{$key->angka_kredit_usulan}}" data-file="{{$key->evidence}}" data-angka="{{$key->modul_kegiatan->angka_kredit}}">
+                      </a> --}}
+                      <a href="#" class="btn btn-outline-success btn-sm btn-edit" data-toggle="modal" data-target="#editButir" data-id="{{$key->id}}" data-isi="{{$key->modul_kegiatan->isi_kegiatan}}" data-modul="{{$key->modul_kegiatan->id}}" data-tgl="{{$key->tanggal_pelaksanaan}}" data-vol="{{$key->volume}}" data-kredit="{{$key->angka_kredit_usulan}}" data-file="{{asset('storage/'.$key->evidence)}}" data-angka="{{$key->modul_kegiatan->angka_kredit}}">
                           <i class="fe fe-edit"></i>
                       </a>
                       <a href="#" class="btn btn-outline-danger btn-sm btn-hapus" data-toggle="modal" data-target="#hapusButir" data-id="{{$key->id}}" data-url="{{route('dokumentasi.hapus', ['id' => $key->id])}}">
@@ -176,12 +176,8 @@
             </div>
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Bukti Fisik : (format: .txt dan .pdf)</label>
-              <input class="form-control" type="file" id="evidence" name="evidence">
-              @if($key->evidence != null)
-                <a href="{{asset('storage/'.$key->evidence)}}" target="_blank" class="text-decoration-none"><span class="fe fe-file"></span>Bukti Fisik</a>
-              @else
-                Belum ada bukti fisik
-              @endif
+              <input class="form-control" type="file" name="evidence">
+                <a id = "evidence" href="#" target="_blank" class="text-decoration-none"><span class="fe fe-file"></span>Bukti Fisik</a>
             </div>
           
         </div>
@@ -196,8 +192,7 @@
 @endsection
 @section('js-after')
 <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
-<script src='https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js'></script>
-<script src='https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js'></script>
+
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -215,7 +210,7 @@
        angka = $(this).data('angka');
        url = window.location.origin + '/dokumentasi/' + 'edit/' +id;
 
-       console.log(url)
+       console.log(file)
        
        $('#form-modal-edit').attr('action', url);
        $('#butir_kegiatan').attr('value', modul);
@@ -224,7 +219,7 @@
        $('#angka_kredit').val(angka);
        $('#volume').attr('value', vol);
        $('#tanggal_pelaksanaan').attr('value', tgl);
-       $('#evidence').attr('value', file);
+       $('#evidence').attr('href', file);
 
   });
 

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./assets/libs/flatpickr/dist/flatpickr.min.css" />
     <link rel="stylesheet" href="./assets/libs/quill/dist/quill.core.css" />
     <link rel="stylesheet" href="./assets/libs/highlightjs/styles/vs2015.css" />
-    <link href="{{asset('assets/img/avatars/profiles/edu.png')}}" rel="shortcut icon" />
 
     <!-- Map -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" rel="stylesheet" />
@@ -20,14 +19,44 @@
     <link rel="stylesheet" href="./assets/css/theme.min.css">
       
     <!-- Title -->
-    <title>Dupac Prakom</title>
+    <title>Dashkit</title>
 
   </head>
   <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
 
     <!-- CONTENT
     ================================================== -->
-    @yield('content')
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-5 col-xl-4 my-5">
+          
+          <div class="text-center">
+          
+            <!-- Preheading -->
+            <h6 class="text-uppercase text-muted mb-4">
+              404 error
+            </h6>
+
+            <!-- Heading -->
+            <h1 class="display-4 mb-3">
+              There’s no page here 😭
+            </h1>
+
+            <!-- Subheading -->
+            <p class="text-muted mb-4">
+              Salah room mazeee
+            </p>
+
+            <!-- Button -->
+            <a href="{{route('dashboard')}}" class="btn btn-lg btn-primary">
+              Return to your dashboard
+            </a>
+          
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
 
     <!-- JAVASCRIPT
     ================================================== -->

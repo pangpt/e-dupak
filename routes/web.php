@@ -25,22 +25,22 @@ Route::get('/register', [RegisterController::class, 'index'])->name('registerpag
 Route::post('/register', [RegisterController::class, 'store'])->name('registerstore');
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');
-Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->name('bab_kegiatan');
-Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan');
-Route::get('/master_kegiatan/modul', [MasterKegiatanController::class, 'modul_kegiatan'])->name('modul_kegiatan');
+Route::get('/master_kegiatan/bab', [MasterKegiatanController::class, 'bab'])->name('bab_kegiatan')->middleware('auth');
+Route::get('/master_kegiatan/subbab', [MasterKegiatanController::class, 'subbab'])->name('subbab_kegiatan')->middleware('auth');
+Route::get('/master_kegiatan/modul', [MasterKegiatanController::class, 'modul_kegiatan'])->name('modul_kegiatan')->middleware('auth');
 
-Route::get('dokumentasi/daftarkegiatan', [DokumentasiController::class, 'daftarkegiatan'])->name('dokumentasi.daftarkegiatan');
-Route::get('/dokumentasi/tambah', [DokumentasiController::class, 'tambah'])->name('dokumentasi.tambah');
-Route::get('/dokumentasi/detil', [DokumentasiController::class, 'detil'])->name('dokumentasi.detil');
-Route::post('/dokumentasi/tambah', [DokumentasiController::class, 'inputkegiatan'])->name('dokumentasi.input');
-Route::post('dokumentasi/edit/{id}',[DokumentasiController::class, 'edit'])->name('dokumentasi.edit');
-Route::get('/dokumentasi/hapus/{id}', [DokumentasiController::class, 'hapus'])->name('dokumentasi.hapus');
+Route::get('dokumentasi/daftarkegiatan', [DokumentasiController::class, 'daftarkegiatan'])->name('dokumentasi.daftarkegiatan')->middleware('auth');
+Route::get('/dokumentasi/tambah', [DokumentasiController::class, 'tambah'])->name('dokumentasi.tambah')->middleware('auth');
+Route::get('/dokumentasi/detil', [DokumentasiController::class, 'detil'])->name('dokumentasi.detil')->middleware('auth');
+Route::post('/dokumentasi/tambah', [DokumentasiController::class, 'inputkegiatan'])->name('dokumentasi.input')->middleware('auth');
+Route::post('dokumentasi/edit/{id}',[DokumentasiController::class, 'edit'])->name('dokumentasi.edit')->middleware('auth');
+Route::get('/dokumentasi/hapus/{id}', [DokumentasiController::class, 'hapus'])->name('dokumentasi.hapus')->middleware('auth');
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::get('/profile/akun', [ProfileController::class, 'akun'])->name('profile.akun');
-Route::post('/profile/akun', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
+Route::get('/profile/akun', [ProfileController::class, 'akun'])->name('profile.akun')->middleware('auth');
+Route::post('/profile/akun', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 
-Route::get('/dupak/parameter', [DupakController::class, 'parameter'])->name('dupak.parameter');
-Route::post('/dupak/parameter', [DupakController::class, 'inputParameter'])->name('dupak.inputparam');
+Route::get('/dupak/parameter', [DupakController::class, 'parameter'])->name('dupak.parameter')->middleware('auth');
+Route::post('/dupak/parameter', [DupakController::class, 'inputParameter'])->name('dupak.inputparam')->middleware('auth');
 
 Route::get('/dokumentasi/autocomplete', [DokumentasiController::class, 'autocomplete'])->name('dokumentasi.autocomplete');

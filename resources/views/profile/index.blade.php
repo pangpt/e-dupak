@@ -184,13 +184,13 @@
                 <div class="col-8">
 
                   <div class="progress" style="height: 25px;">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="400" aria-valuemin="0" aria-valuemax="500">400</div>
+                    <div class="progress-bar" role="progressbar" style="width:{{$kredit*2}}%;" aria-valuenow="400" aria-valuemin="0" aria-valuemax="500">{{$kredit}}</div>
                   </div>
 
                 </div>
                 <div class="col-2">
 
-                  120 - Pertama (III/a)
+                  50 - Pertama (III/a)
 
                 </div>
               </div> <!-- / .row -->

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
 use App\Models\UserDetail;
+use App\Models\Dupak;
 
 class ProfileController extends Controller
 {
@@ -14,9 +15,12 @@ class ProfileController extends Controller
     {
         $data = User::where('id', Auth::user()->id)->first();
         $detail = UserDetail::where('user_id', Auth::user()->id)->first();
+        $kredit = Dupak::where('user_id', Auth::user()->id)->sum('angka_kredit_usulan');
+        // dd($kredit);
         return view('profile.index', [
             'data' => $data,
-            'detail' => $detail
+            'detail' => $detail,
+            'kredit' => $kredit
         ]);
 
     }

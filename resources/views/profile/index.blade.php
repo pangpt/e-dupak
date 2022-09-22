@@ -4,7 +4,7 @@
 
 <div class="header">
   <!-- Image -->
-  <img src="assets/img/covers/profile-cover-1.jpg" class="header-img-top" alt="...">
+  <img src="{{asset('assets/img/profile-cover-1.jpg')}}" class="header-img-top" alt="...">
 
   <div class="container-fluid">
 
@@ -15,7 +15,7 @@
 
           <!-- Avatar -->
           <div class="avatar avatar-xxl header-avatar-top">
-            <img src="assets/img/avatars/profiles/default.jpg" alt="..." class="avatar-img rounded-circle border border-4 border-body">
+            <img src="{{asset('assets/img/default.jpg')}}" alt="..." class="avatar-img rounded-circle border border-4 border-body">
           </div>
 
         </div>

@@ -8,7 +8,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand" href="{{route('dashboard')}}">
-        <img src="{{asset('assets/img/avatars/profiles/edu.png')}}"  class="navbar-brand-img
+        <img src="{{asset('assets/img/edu.png')}}"  class="navbar-brand-img
         mx-auto" alt="...">
       </a>
 

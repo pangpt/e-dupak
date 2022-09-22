@@ -99,7 +99,7 @@
                   </td>
                   <td class="orders-date">
                     @if($key->evidence != null)
-                      <a href="{{asset('storage/'.$key->evidence)}}" target="_blank" class="text-decoration-none"><span class="fe fe-file" title="Lihat Berkas"></span></a>
+                      <a href="{{asset('file/'.$key->evidence)}}" target="_blank" class="text-decoration-none"><span class="fe fe-file" title="Lihat Berkas"></span></a>
                     @else 
                     @endif
                     
@@ -108,7 +108,7 @@
                       {{-- <a href="#" class="btn btn-outline-primary btn-sm">
                           <i class="fe fe-eye"></i>
                       </a> --}}
-                      <a href="#" class="btn btn-outline-success btn-sm btn-edit" data-toggle="modal" data-target="#editButir" data-id="{{$key->id}}" data-isi="{{$key->modul_kegiatan->isi_kegiatan}}" data-modul="{{$key->modul_kegiatan->id}}" data-tgl="{{$key->tanggal_pelaksanaan}}" data-vol="{{$key->volume}}" data-kredit="{{$key->angka_kredit_usulan}}" data-file="{{asset('storage/'.$key->evidence)}}" data-angka="{{$key->modul_kegiatan->angka_kredit}}">
+                      <a href="#" class="btn btn-outline-success btn-sm btn-edit" data-toggle="modal" data-target="#editButir" data-id="{{$key->id}}" data-isi="{{$key->modul_kegiatan->isi_kegiatan}}" data-modul="{{$key->modul_kegiatan->id}}" data-tgl="{{$key->tanggal_pelaksanaan}}" data-vol="{{$key->volume}}" data-kredit="{{$key->angka_kredit_usulan}}" data-file="{{asset('file/'.$key->evidence)}}" data-angka="{{$key->modul_kegiatan->angka_kredit}}">
                           <i class="fe fe-edit"></i>
                       </a>
                       <a href="#" class="btn btn-outline-danger btn-sm btn-hapus" data-toggle="modal" data-target="#hapusButir" data-id="{{$key->id}}" data-url="{{route('dokumentasi.hapus', ['id' => $key->id])}}">

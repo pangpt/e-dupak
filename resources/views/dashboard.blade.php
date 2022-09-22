@@ -82,7 +82,7 @@
 
                     <!-- Title -->
                     <h6 class="text-uppercase text-muted mb-2">
-                      Follow me on valorant
+                      Add me on valorant
                     </h6>
 
                     <!-- Heading -->

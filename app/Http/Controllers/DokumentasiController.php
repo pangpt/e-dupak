@@ -42,7 +42,7 @@ class DokumentasiController extends Controller
         // dd($ak);
 
         $file = $request->file('evidence');
-        $upload = $file ? Storage::disk('localpublic')->put('evidence', $file) : null;
+        // $upload = $file ? Storage::disk('localpublic')->put('evidence', $file) : null;
         // $filename = $file->getClientOriginalName();
 
         // dd($filename);
@@ -53,7 +53,7 @@ class DokumentasiController extends Controller
         $data->volume = $request->volume;
         $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
         $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
-        $data->evidence = $upload;
+        $data->evidence = $file ? $file->store('evidence') : null;   
         
         $data->save();
         // dd($data);
@@ -87,7 +87,7 @@ class DokumentasiController extends Controller
         $ak = ModulKegiatan::where('id', $request->butir_kegiatan)->first();
 
         // dd($request->butir_kegiatan);
-        $file = Storage::disk('localpublic')->put('evidence', $request->file('evidence'));
+        // $file = Storage::disk('localpublic')->put('evidence', $request->file('evidence'));
 
         $data = Dupak::where('id', $id)->first();
         $data->modul_kegiatan_id = $request->butir_kegiatan;
@@ -95,7 +95,7 @@ class DokumentasiController extends Controller
         $data->tanggal_pelaksanaan = $request->tanggal_pelaksanaan;
         $data->angka_kredit_usulan = $request->volume * $ak->angka_kredit;
         if($request->file('evidence')){
-            $data->evidence = $file;
+            $data->evidence = $request->file('evidence')->store('evidence');
         }
         $data->update();
         // dd($data);

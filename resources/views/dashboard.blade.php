@@ -48,23 +48,23 @@
 
                     <!-- Title -->
                     <h6 class="text-uppercase text-muted mb-2">
-                      Value
+                      Follow me on github
                     </h6>
 
                     <!-- Heading -->
-                    <span class="h2 mb-0">
-                      $24,500
+                    <span class="h5 mb-0">
+                      pangpt
                     </span>
 
                     <!-- Badge -->
-                    <span class="badge badge-soft-success mt-n1">
+                    {{-- <span class="badge badge-soft-success mt-n1">
                       +3.5%
-                    </span>
+                    </span> --}}
                   </div>
                   <div class="col-auto">
 
                     <!-- Icon -->
-                    <span class="h2 fe fe-dollar-sign text-muted mb-0"></span>
+                    <span><img src="{{asset('assets/img/github-logo.png')}}" alt="" width="40px"></span>
 
                   </div>
                 </div> <!-- / .row -->
@@ -82,19 +82,19 @@
 
                     <!-- Title -->
                     <h6 class="text-uppercase text-muted mb-2">
-                      Total hours
+                      Follow me on valorant
                     </h6>
 
                     <!-- Heading -->
-                    <span class="h2 mb-0">
-                      763.5
+                    <span class="h5 mb-0">
+                      Goddamn Steven#4646
                     </span>
 
                   </div>
                   <div class="col-auto">
 
                     <!-- Icon -->
-                    <span class="h2 fe fe-briefcase text-muted mb-0"></span>
+                    <span><img src="{{asset('assets/img/valo.png')}}" alt="" width="50px"></span>
 
                   </div>
                 </div> <!-- / .row -->
@@ -112,51 +112,19 @@
 
                     <!-- Title -->
                     <h6 class="text-uppercase text-muted mb-2">
-                      Exit %
+                      Open Donation
                     </h6>
 
                     <!-- Heading -->
-                    <span class="h2 mb-0">
-                      35.5%
+                    <span class="h5 mb-0">
+                      Japri
                     </span>
+
 
                   </div>
                   <div class="col-auto">
 
-                    <!-- Chart -->
-                    <div class="chart chart-sparkline">
-                      <canvas class="chart-canvas" id="sparklineChart"></canvas>
-                    </div>
-
-                  </div>
-                </div> <!-- / .row -->
-              </div>
-            </div>
-
-          </div>
-          <div class="col-12 col-lg-6 col-xl">
-
-            <!-- Time -->
-            <div class="card">
-              <div class="card-body">
-                <div class="row align-items-center">
-                  <div class="col">
-
-                    <!-- Title -->
-                    <h6 class="text-uppercase text-muted mb-2">
-                      Avg. Time
-                    </h6>
-
-                    <!-- Heading -->
-                    <span class="h2 mb-0">
-                      2:37
-                    </span>
-
-                  </div>
-                  <div class="col-auto">
-
-                    <!-- Icon -->
-                    <span class="h2 fe fe-clock text-muted mb-0"></span>
+                    <span class="h1 fe fe-dollar-sign text-bold mb-0"></span>
 
                   </div>
                 </div> <!-- / .row -->

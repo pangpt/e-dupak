@@ -112,13 +112,15 @@
 
                     <!-- Title -->
                     <h6 class="text-uppercase text-muted mb-2">
-                      Open Donation
+                      Open Donation & Services
                     </h6>
 
                     <!-- Heading -->
+                    <a href="https://wa.me/082138127795?text=Buatin%20aplikasi%20dong%20ngab" target="_blank">
                     <span class="h5 mb-0">
                       Japri
                     </span>
+                    </a>
 
 
                   </div>
@@ -132,7 +134,42 @@
             </div>
 
           </div>
+          
+          
         </div> <!-- / .row -->
+        <div class="row">
+          <div class="col-12 col-lg-12 col-xl">
 
+            <!-- Exit -->
+            <a href="https://vantura.id/" target="_blank">
+            <div class="card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Title -->
+                    <h6 class="text-uppercase text-bold mb-2">
+                      SUPPORTED BY
+                    </h6>
+
+                    <!-- Heading -->
+                    <span class="h2 mb-0">
+                      Vantura Digital Agency
+                    </span>
+
+
+                  </div>
+                  <div class="col-auto">
+
+                    <span><img src="{{asset('assets/img/supported.jpg')}}" alt="" ></span>
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+            </a>
+
+          </div>
+        </div>
       </div>
 @endsection
